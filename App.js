@@ -4,9 +4,11 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* the last element of style array will take precedence */}
+      {/* border radius in Text only applies to Android */}
       <View style={[styles.box, styles.lightblueBg]}>
-        <Text>Lightblue Box</Text>
+        <Text style={{ borderRadius: 5, backgroundColor: "red" }}>
+          Lightblue Box
+        </Text>
       </View>
       <View style={[styles.box, styles.lightgreenBg]}>
         <Text>Lightgreen Box</Text>
@@ -30,6 +32,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     borderWidth: 2,
     borderColor: "purple",
+    borderRadius: 5,
   },
   lightblueBg: {
     backgroundColor: "lightblue",
