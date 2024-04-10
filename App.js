@@ -22,8 +22,9 @@ const styles = StyleSheet.create({
     padding: 60,
   },
   box: {
-    width: 100,
-    height: 100,
+    //when parent dimensions are defined, child dimensions can be determined by percentage
+    width: "25%",
+    height: "25%",
     padding: 10,
     backgroundColor: "red",
   },
