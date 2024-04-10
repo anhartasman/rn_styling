@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 20,
     marginVertical: 10,
-    backgroundColor: "red",
+    borderWidth: 2,
+    borderColor: "purple",
   },
   lightblueBg: {
     backgroundColor: "lightblue",
