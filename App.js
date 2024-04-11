@@ -4,7 +4,12 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* to add shadow in android we must use elevation property */}
+      {/* styles inheritance from Text to Text does work in React Native */}
+      <View style={styles.darkMode}>
+        <Text style={styles.darkModeText}>
+          Style Inheritance <Text style={styles.boldText}>in bold</Text>
+        </Text>
+      </View>
       <View
         style={[
           styles.box,
@@ -29,6 +34,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "plum",
     padding: 60,
+  },
+  darkMode: {
+    backgroundColor: "black",
+  },
+  darkModeText: {
+    color: "white",
+  },
+  boldText: {
+    fontWeight: "bold",
   },
   box: {
     width: 250,
