@@ -4,13 +4,20 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* border radius in Text only applies to Android */}
-      <View style={[styles.box, styles.lightblueBg]}>
+      {/* to add shadow in android we must use elevation property */}
+      <View
+        style={[
+          styles.box,
+          styles.lightblueBg,
+          styles.boxShadow,
+          styles.androidShadow,
+        ]}
+      >
         <Text style={{ borderRadius: 5, backgroundColor: "red" }}>
           Lightblue Box
         </Text>
       </View>
-      <View style={[styles.box, styles.lightgreenBg]}>
+      <View style={[styles.box, styles.lightgreenBg, styles.androidShadow]}>
         <Text>Lightgreen Box</Text>
       </View>
     </View>
@@ -24,8 +31,8 @@ const styles = StyleSheet.create({
     padding: 60,
   },
   box: {
-    width: 100,
-    height: 100,
+    width: 250,
+    height: 250,
     // padding: 10,
     paddingHorizontal: 10,
     paddingVertical: 20,
@@ -39,5 +46,17 @@ const styles = StyleSheet.create({
   },
   lightgreenBg: {
     backgroundColor: "lightgreen",
+  },
+  boxShadow: {
+    shadowColor: "#333333",
+    shadowOffset: {
+      width: 6,
+      height: 6,
+    },
+    shadowOpacity: 0.6,
+    shadowRadius: 4,
+  },
+  androidShadow: {
+    elevation: 10,
   },
 });
